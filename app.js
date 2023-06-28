@@ -30,9 +30,6 @@ mongoose.connect(process.env.MONGO_URI)
 
 // View routes
 app.use("/", viewTodoRoutes);
-// app.use("/", (req, res) => {
-//   res.send("Hello");
-// })
 
 // Routes
 app.use("/api/v1/todos", todoRoutes);
