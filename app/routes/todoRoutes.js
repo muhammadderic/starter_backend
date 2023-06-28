@@ -1,28 +1,26 @@
 const router = require("express").Router();
 
+const {
+  createTodo,
+  getAllTodo,
+  getTodo,
+  updateTodo,
+  deleteTodo,
+} = require("../controllers/todoController");
+
 // Create a todo
-router.post("/", (req, res) => {
-  res.send("Create a Todo");
-})
+router.post("/", createTodo);
 
 // Get all todos
-router.get("/", (req, res) => {
-  res.send("Get All Todo");
-})
+router.get("/", getAllTodo);
 
 // Get a todo
-router.get("/:id", (req, res) => {
-  res.send("Get a Todo");
-})
+router.get("/:id", getTodo);
 
 // Update a todo
-router.put("/:id", (req, res) => {
-  res.send("Update a Todo");
-})
+router.put("/:id", updateTodo);
 
 // Delete a todo
-router.delete("/:id", (req, res) => {
-  res.send("Delete a Todo");
-})
+router.delete("/:id", deleteTodo);
 
 module.exports = router;
