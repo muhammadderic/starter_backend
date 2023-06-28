@@ -2,6 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+const todoRoutes = require("./app/routes/todoRoutes");
+
 const app = express();
 dotenv.config();
 
@@ -10,9 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use("/", (req, res) => {
-  res.send("Hello Deric");
-})
+app.use("/api/v1/todos", todoRoutes);
 
 // Listen
 app.listen(process.env.PORT, () => {
